@@ -19,7 +19,6 @@ body{
   color: #ffffff;
   line-height: 16px;
   font-family: 'Quicksand', sans-serif;
-  text-shadow: 1 0 0 0 #002F6C;
   padding-top: 30px;
 }
 
@@ -86,4 +85,18 @@ body{
    left: 600px;
    z-index: 2;
   visibility: visible;
+}
+
+#jumpButton{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin:20px 0 30px 0;
+}
+
+#froggy{
+  background-color: inherit;
+  color: #ffffff;
+  border-color: #ffffff;
+  width: 200px;
 }
