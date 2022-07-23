@@ -1,0 +1,59 @@
+body{
+  background: #EEC626;
+}
+
+#container{
+  width: 1024px;
+  margin: 0 auto;
+}
+
+#heading{
+  width: 1024px;
+  height: 150px;
+  text-align: center;
+  display: flex;
+}
+
+#the-playground{
+ background: url(images/playground.jpg);
+ background-size: 1024px;
+ height: 460px;
+ display: flex;
+}
+
+#lili{
+  width: 824px;
+  position: relative;
+}
+
+#topjump{
+   position: absolute;
+   top: 168px;
+   left: 585px;
+   z-index: 3;
+   visibility: hidden;
+}
+
+#ljump{
+   position: absolute;
+   top: 230px;
+   left: 630px;
+   z-index: 1;
+   visibility: visible;
+}
+
+#ljumpup{
+   position: absolute;
+   top: 200px;
+   left: 630px;
+   z-index: 1;
+   visibility: hidden;
+}
+
+#botjump{
+   position: absolute;
+   top: 280px;
+   left: 600px;
+   z-index: 2;
+  visibility: visible;
+}
