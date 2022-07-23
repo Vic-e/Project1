@@ -9,9 +9,39 @@ body{
 
 #heading{
   width: 1024px;
-  height: 150px;
+  height: 250px;
   text-align: center;
   display: flex;
+}
+
+.scoreboard{
+  font-size: 28px;
+  color: #ffffff;
+  line-height: 16px;
+  font-family: 'Quicksand', sans-serif;
+  text-shadow: 1 0 0 0 #002F6C;
+  padding-top: 30px;
+}
+
+#logo{
+  font-size: 40px;
+  color: #ffffff;
+  line-height: 50px;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600px;
+}
+
+#announcement{
+  color: #b666d2;
+  font-size: 20px;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
 }
 
 #the-playground{

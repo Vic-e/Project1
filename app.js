@@ -14,15 +14,24 @@ class Player{
 
 }
 
-let p1 = new Player("Player1", 0)
-let p2 = new Player("Player2", 0)
+const startBtn = document.querySelector("#start")
+startBtn.addEventListener("click", ()=>{
+  location.reload();
+})
+
+let p1 = new Player("PLAYER 1", 0)
+let p2 = new Player("PLAYER 2", 0)
 
 function setPlayer(){
   const whoDaPlaya = document.querySelector("#playa");
   whoDaPlaya.innerHTML = `${p1.title}`;
+  const whoDaPlayaTwo = document.querySelector("#playa2");
+  whoDaPlayaTwo.innerHTML = `${p2.title}`;
 }
 
 setPlayer();
+
+
 
 let ropeUp = document.querySelector("#topjump");
 let ropeDown = document.querySelector("#botjump");
@@ -73,19 +82,19 @@ function pointCounter(){
 
 
 function setScore(){
-  const daNumba= document.querySelector("#numbers");
-  daNumba.innerHTML = `Score: ${p1.score}`;
+  const daNumba= document.querySelector("#number1");
+  daNumba.innerHTML = `SCORE: ${p1.score}`;
 }
 
 //function nameWinner(){
-//   const x document.querySelector("#scoreboard");
-//  if(p1.score = p2.score){
-//     x.innerHTML = `You Tie`
+//   const winnerWinner document.querySelector("#announcement");
+//  if(p1.score === p2.score){
+//     winnerWinner.innerHTML = `You Tie`
 //  }
 //  else if(p1.score => p2.score){
-//    x.innerHTML = `Player 1 wins!`
+//    winnerWinner.innerHTML = `Player 1 wins!`
 //  }
 //  else{
-//    x.innerHTML = `Player 2 win!`
+//    winnerWinner.innerHTML = `Player 2 win!`
 //  }
 // }
