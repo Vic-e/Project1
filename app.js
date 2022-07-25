@@ -4,20 +4,22 @@ class Player{
   this.score = 0;
   }
 
-  characterUp(){
+    characterUp(){
     this.score += 5
-  }
+    }
 
-  characterDown(){
+    characterDown(){
     this.score -= 5
-  }
+    }
 
 }
 
-const startBtn = document.querySelector("#start")
-startBtn.addEventListener("click", ()=>{
+const startOverBtn = document.querySelector("#startOver")
+startOverBtn.addEventListener("click", ()=>{
   location.reload();
 })
+
+const startBtn = document.querySelector("#start")
 
 let p1 = new Player("PLAYER 1", 0)
 let p2 = new Player("PLAYER 2", 0)
@@ -37,10 +39,12 @@ const deluxe = document.querySelector("#ljumpup");
 
 //declare a variable for button
 const jumpBtn = document.querySelector("#froggy")
+const jumpBtnTwo = document.querySelector("#froggy2")
 
 //declare jumprope variables
 let ropeUp = document.querySelector("#topjump");
 let ropeDown = document.querySelector("#botjump");
+
 
 function modeOne(){
 let rando = 0
@@ -56,7 +60,7 @@ function jumpRope(){
   rando++;
   pointCounter()
   setScore()
-    if(rando >= 20){
+    if(rando >= 21){
     clearInterval(boss);
     console.log(`rando: ${rando}`)
     }
@@ -76,6 +80,7 @@ jumpBtn.addEventListener('click', function changeImage(){
 });
 }
 
+
 function modeTwo(){
 let randoTwo = 0
 function jumpRope(){
@@ -90,15 +95,13 @@ function jumpRope(){
   randoTwo++;
   pointCounter()
   setScore()
-  if(randoTwo >= 20){
+  if(randoTwo >= 21){
   clearInterval(bossTwo);
   console.log(`randoTwo: ${randoTwo}`)
   }
 }
 
 const bossTwo = setInterval(jumpRope, 450);
-
-
 
 jumpBtn.addEventListener('click', function changeImage(){
     del.style.visibility = "hidden";
@@ -110,24 +113,6 @@ jumpBtn.addEventListener('click', function changeImage(){
       ,340)
 });
 }
-
-function seshOne(){
-  modeOne();
-  modeTwo();
-}
-
-function seshTwo(){
-  modeThree();
-  modeFour();
-}
-function gameOrder(){
-  alert("Lili has a magical rope. Press the jump button to make her jump");
-  seshOne();
-  setTimeout(seshTwo(), 10000);
-  nameWinner();
-}
-
-gameOrder()
 
 function pointCounter(){
   if(deluxe.style.visibility === "visible" && ropeDown.style.visibility === "visible"){
@@ -138,46 +123,90 @@ function pointCounter(){
   }
 }
 
+function setScore(){
+  const daNumba= document.querySelector("#number1");
+  daNumba.innerHTML = `SCORE: ${p1.score}`;
+}
+
+
+setTimeout(modeOne,3000)
+setTimeout(modeTwo,24000)
+setTimeout(modeThree,33000)
+setTimeout(modeFour,51000)
+
+
+// function seshTwo(){
+//   modeThree();
+//   modeFour();
+// }
+//
+// function gameOrder(){
+//   alert("Lili has a magical rope. Press the jump button to make her jump.");
+//   seshOne();
+//   seshTwo();
+//   nameWinner();
+// }
+//
+// gameOrder()
+//
+//
+//
+const dede = document.querySelector("#djump");
+const dedeluxe = document.querySelector("#djumpup");
+
+//declare jumprope variables
+let ropeUp2 = document.querySelector("#topjump");
+let ropeDown2 = document.querySelector("#botjump");
+
 function pointCounterTwo(){
-  if(deluxe.style.visibility === "visible" && ropeDown.style.visibility === "visible"){
+  if(dedeluxe.style.visibility === "visible" && ropeDown2.style.visibility === "visible"){
     p2.characterUp();
   }
-  else if(del.style.visibility === "visible" && ropeDown.style.visibility === "visible"){
+  else if(dede.style.visibility === "visible" && ropeDown2.style.visibility === "visible"){
     p2.characterDown();
   }
 }
 
+
 function modeThree(){
+const announceTurn = document.querySelector("div #readySetGo");
+announceTurn.setAttribute("id", "readySetGoTwo")
+const liliVis = document.querySelector("#lili").children[1]
+liliVis.remove()
+const liliVis2 = document.querySelector("#lili").children[1]
+liliVis2.remove()
+const dedeVis = document.querySelector("#lili").children[1]
+dedeVis.style.visibility = "visible"
+
 let randoThree = 0
 function jumpRope(){
   if(randoThree %2 == 0){
-    ropeUp.style.visibility = "hidden"
-    ropeDown.style.visibility = "visible"
+    ropeUp2.style.visibility = "hidden"
+    ropeDown2.style.visibility = "visible"
   }
   else {
-    ropeDown.style.visibility = "hidden"
-    ropeUp.style.visibility = "visible"
+    ropeDown2.style.visibility = "hidden"
+    ropeUp2.style.visibility = "visible"
   }
   randoThree++;
   pointCounterTwo();
   setScore2();
-    if(randoThree >= 20){
+    if(randoThree >= 21){
     clearInterval(bossThree);
-    console.log(`rando3: ${randoThree}`)
-    }
+      }
 }
 
 const bossThree = setInterval(jumpRope, 900)
 
 
-jumpBtn.addEventListener('click', function changeImage(){
-    del.style.visibility = "hidden";
-    deluxe.style.visibility = "visible";
+jumpBtnTwo.addEventListener('click', function changeImage(){
+    dede.style.visibility = "hidden";
+    dedeluxe.style.visibility = "visible";
     setTimeout(() => {
-      deluxe.style.visibility = "hidden";
-      del.style.visibility = "visible";
+      dedeluxe.style.visibility = "hidden";
+      dede.style.visibility = "visible";
     }
-      ,680)
+      ,600)
 });
 }
 
@@ -185,58 +214,51 @@ function modeFour(){
 let randoFour = 0
 function jumpRope(){
   if(randoFour %2 == 0){
-    ropeUp.style.visibility = "hidden"
-    ropeDown.style.visibility = "visible"
+    ropeUp2.style.visibility = "hidden"
+    ropeDown2.style.visibility = "visible"
   }
   else {
-    ropeDown.style.visibility = "hidden"
-    ropeUp.style.visibility = "visible"
+    ropeDown2.style.visibility = "hidden"
+    ropeUp2.style.visibility = "visible"
   }
   randoFour++;
   pointCounterTwo();
   setScore2();
   if(randoFour >= 20){
   clearInterval(bossFour);
-  console.log(`randoFour: ${randoFour}`)
   }
 }
 
-const bossFour = setInterval(jumpRope, 450);
+const bossFour = setInterval(jumpRope, 1350);
 
 
 
-jumpBtn.addEventListener('click', function changeImage(){
-    del.style.visibility = "hidden";
-    deluxe.style.visibility = "visible";
+jumpBtnTwo.addEventListener('click', function changeImage(){
+    dede.style.visibility = "hidden";
+    dedeluxe.style.visibility = "visible";
     setTimeout(() => {
-      deluxe.style.visibility = "hidden";
-      del.style.visibility = "visible";
+      dedeluxe.style.visibility = "hidden";
+      dede.style.visibility = "visible";
     }
       ,340)
 });
 }
 
 
-
-function setScore(){
-  const daNumba= document.querySelector("#number1");
-  daNumba.innerHTML = `SCORE: ${p1.score}`;
-}
-
 function setScore2(){
   const daOthaNumba= document.querySelector("#number2");
   daOthaNumba.innerHTML = `SCORE: ${p2.score}`;
 }
 
-function nameWinner(){
-  const winnerWinner = document.querySelector("#announcement");
- if(p1.score > 0 && p1.score === p2.score){
-    winnerWinner.innerHTML = `You Tie`
- }
- else if(p1.score > 0 && p1.score >= p2.score){
-   winnerWinner.innerHTML = `Player 1 wins!`
- }
- else if(p2.score > 0 && p2.score >= p1.score){
-   winnerWinner.innerHTML = `Player 2 wins!`
- }
-}
+// function nameWinner(){
+//   const winnerWinner = document.querySelector("#announcement");
+//  if(p1.score === p2.score){
+//     winnerWinner.innerHTML = `You Tie`
+//  }
+//  else if(p1.score >= p2.score){
+//    winnerWinner.innerHTML = `Player 1 wins!`
+//  }
+//  else if(p2.score >= p1.score){
+//    winnerWinner.innerHTML = `Player 2 wins!`
+//  }
+// }

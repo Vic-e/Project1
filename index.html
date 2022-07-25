@@ -20,29 +20,37 @@
           <h1>LiLi's<br/>
              PlayGround</h1>
           <span id="announcement"></span>
-          <button id="start" style="font-size:24px; line-height:2px;"><span class="material-symbols-outlined">
-home
-</span></button>
+          <button id="startOver" style="font-size:24px; line-height:2px;"><span class="material-symbols-outlined">
+            home
+            </span></button>
+            <button id="start" style="font-size:24px;">
+              Start
+          </button>
         </div>
         <div class="scoreboard" style="width:250px;">
           <p id="playa2">PLAYER 2</p>
           <p id="number2">SCORE: 0</p>
+          <audio controls loop>
+            <source src="upbeat-funk-music.mp3" type="audio/mpeg">
+        </audio>
         </div>
       </section>
       <section id="the-playground">
+          <div id="goText"><span id="readySetGo"></span></div>
           <div id="lili">
             <img id="topjump" src="images/Jumprope-Up.png" height="200px" alt="jumprope">
             <img id="ljumpup"  src="images/LiLi-Jumping.png" height="200px" alt="lili">
             <img id="ljump" onclick="changeImage()" src="images/LiLi-JumpingDown.png" height="200px" alt="lili">
+            <img id="djump" onclick="changeImage()" src="images/LiLi-Mad.png" height="200px" alt="dede">
+            <img id="djumpup"  src="images/LiLi-Mistake.png" height="200px" alt="dede">
             <img id="botjump" src="images/Jumprope-Down.png" height="200px" alt="jumprope">
           </div>
       </section>
       <section id="jumpButton">
-          <button id="froggy" type="button" name="button">Jump</button>
+          <button id="froggy" type="button" name="button">Jump Player 1</button>
+          <button id="froggy2" type="button" name="button">Jump Player 2</button>
       </section>
       </div>
   </body>
-  <script src="app.js">
-
-  </script>
+  <script src="app.js"></script>
 </html>
