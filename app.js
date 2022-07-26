@@ -14,12 +14,12 @@ class Player{
 
 }
 
+
 const startOverBtn = document.querySelector("#startOver")
 startOverBtn.addEventListener("click", ()=>{
   location.reload();
 })
 
-const startBtn = document.querySelector("#start")
 
 let p1 = new Player("PLAYER 1", 0)
 let p2 = new Player("PLAYER 2", 0)
@@ -129,28 +129,18 @@ function setScore(){
 }
 
 
+
+// function gameOrder(){
 setTimeout(modeOne,3000)
 setTimeout(modeTwo,24000)
-setTimeout(modeThree,33000)
-setTimeout(modeFour,51000)
-
-
-// function seshTwo(){
-//   modeThree();
-//   modeFour();
-// }
-//
-// function gameOrder(){
-//   alert("Lili has a magical rope. Press the jump button to make her jump.");
-//   seshOne();
-//   seshTwo();
-//   nameWinner();
-// }
-//
+setTimeout(nextTurnStart,33000)
+setTimeout(modeThree,35400)
+setTimeout(modeFour,55900)
+setTimeout(nameWinner,80000);
 // gameOrder()
 //
 //
-//
+
 const dede = document.querySelector("#djump");
 const dedeluxe = document.querySelector("#djumpup");
 
@@ -167,10 +157,12 @@ function pointCounterTwo(){
   }
 }
 
-
-function modeThree(){
+function nextTurnStart(){
 const announceTurn = document.querySelector("div #readySetGo");
 announceTurn.setAttribute("id", "readySetGoTwo")
+}
+
+function modeThree(){
 const liliVis = document.querySelector("#lili").children[1]
 liliVis.remove()
 const liliVis2 = document.querySelector("#lili").children[1]
@@ -224,7 +216,7 @@ function jumpRope(){
   randoFour++;
   pointCounterTwo();
   setScore2();
-  if(randoFour >= 20){
+  if(randoFour >= 21){
   clearInterval(bossFour);
   }
 }
@@ -250,15 +242,15 @@ function setScore2(){
   daOthaNumba.innerHTML = `SCORE: ${p2.score}`;
 }
 
-// function nameWinner(){
-//   const winnerWinner = document.querySelector("#announcement");
-//  if(p1.score === p2.score){
-//     winnerWinner.innerHTML = `You Tie`
-//  }
-//  else if(p1.score >= p2.score){
-//    winnerWinner.innerHTML = `Player 1 wins!`
-//  }
-//  else if(p2.score >= p1.score){
-//    winnerWinner.innerHTML = `Player 2 wins!`
-//  }
-// }
+function nameWinner(){
+  const winnerWinner = document.querySelector("#announcement");
+ if(p1.score === p2.score){
+    winnerWinner.innerHTML = `You Tie`
+ }
+ else if(p1.score >= p2.score){
+   winnerWinner.innerHTML = `Player 1 wins!`
+ }
+ else if(p2.score >= p1.score){
+   winnerWinner.innerHTML = `Player 2 wins!`
+ }
+}
